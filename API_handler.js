@@ -1,6 +1,6 @@
 //jshint node:true
 'use strict';
-
+//peeked at christian townsdin's repo
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -9,19 +9,22 @@ var request = require('superagent');
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.post('/', function(req, res) {
 
-app.get('/', function(req, res) {
   var wunderURL = 'http://api.wunderground.com/api/' +
-  '924831b5dccbad67' + '/geolookup/conditions/forecast/q/' +
+  'process.env.ENVWUNDERAPI' + '/geolookup/conditions/forecast/q/' +
   'autoip' +
   '.json';
 
   request
     .get(wunderURL)
     .end (function(err, wunderData) {
+
       if (err) console.log('there was an error');
       var tempParse = JSON.parse(wunderData.text);
-      res.json({temp: tempParse.current_observation.temp_f});
+      var temp = (tempParse.current_observation.temp_f);
+
+      res.json(temp);
     });
 });
 
