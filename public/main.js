@@ -11,10 +11,8 @@ $(document).ready(function(){
         $('#wear').html("<h1>Warm stuff</h1>");
 
       }
-      else if(temp > 32 && temp < 90 ){
+      else if(temp > 32){
         $('#wear').html("<h1>I dont' know, make your own choices. I'm not your mom dickhead.</h1>");
-      } else {
-        $('#wear').html("<h1>nothing</h1>");
       }
     }
   });
