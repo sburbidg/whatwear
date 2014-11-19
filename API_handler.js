@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/', function(req, res) {
 
   var wunderURL = 'http://api.wunderground.com/api/' +
-  'process.env.ENVWUNDERAPI' + '/geolookup/conditions/forecast/q/' +
+  process.env.APIKEY + '/geolookup/conditions/forecast/q/' +
   'autoip' +
   '.json';
 
