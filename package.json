@@ -1,0 +1,16 @@
+{
+  "name": "What_should_I_wear",
+  "version": "1.0.0",
+  "description": "",
+  "main": "API_handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.9.2",
+    "express": "^4.10.2",
+    "superagent": "^0.21.0"
+  }
+}
